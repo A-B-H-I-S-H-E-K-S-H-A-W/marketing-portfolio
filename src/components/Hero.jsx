@@ -28,11 +28,13 @@ export function Hero() {
                 </Link>
 
                 <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
-                  Production Ready Digital Marketing blocks
+                  Production Ready{" "}
+                  <p className="text-yellow-400">Digital Marketing</p> Agency
                 </h1>
                 <p className="mt-8">
-                  Error totam sit illum. Voluptas doloribus asperiores quaerat
-                  aperiam. Quidem harum omnis beatae ipsum soluta!
+                  It's more than a marketing agency—it's a catalyst for brand
+                  transformation, turning vision into impact and engagement into
+                  loyalty.
                 </p>
 
                 <div>
@@ -77,7 +79,7 @@ export function Hero() {
                 className="absolute z-[1] inset-0 bg-gradient-to-r from-background from-35%"
               />
               <div className="relative">
-                <div className="h-[2008px] w-[2796px] bg-yellow-300"></div>
+                <div className="h-[2008px] w-[2796px] bg-yellow-400"></div>
               </div>
             </div>
           </div>
