@@ -12,9 +12,9 @@ export function Hero() {
 
       <main>
         <section className="overflow-hidden">
-          <div className="relative mx-auto max-w-7xl px-6 py-28 lg:py-20">
+          <div className="relative mx-auto px-4 md:px-20 py-28 lg:py-20 min-h-screen md:min-h-0">
             <div className="lg:flex lg:items-center lg:gap-12">
-              <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
+              <div className="relative z-10 mx-auto max-2xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <Link
                   href="/"
                   className="rounded-lg mx-auto flex w-fit items-center gap-2 border p-1 pr-3 lg:ml-0"
@@ -27,7 +27,7 @@ export function Hero() {
                   <ArrowRight className="size-4" />
                 </Link>
 
-                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
+                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-7xl">
                   Production Ready{" "}
                   <p className="text-yellow-400">Digital Marketing</p> Agency
                 </h1>
@@ -63,14 +63,9 @@ export function Hero() {
                       </div>
                     </div>
                   </form>
-
-                  <ul className="list-inside list-disc space-y-2">
-                    <li>Faster</li>
-                    <li>Modern</li>
-                    <li>100% Customizable</li>
-                  </ul>
                 </div>
               </div>
+              <div className="relative z-10">Hellocjknsbajkcbadkcbakscbak</div>
             </div>
 
             <div className="absolute inset-0 -mx-4 rounded-3xl p-3 lg:col-span-3">
