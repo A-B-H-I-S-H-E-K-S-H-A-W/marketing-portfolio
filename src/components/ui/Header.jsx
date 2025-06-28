@@ -1,120 +1,134 @@
-import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { Menu, X } from "lucide-react";
 import lightLogo from "@/assets/darkLogo.png";
-import darkLogo from "@/assets/lightLogo.png";
-import { cn } from "@/lib/utils";
+import { easeInOut, motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const menuItems = [
+  { name: "Home", href: "#" },
+  { name: "About", href: "#" },
   { name: "Features", href: "#" },
   { name: "Solution", href: "#" },
   { name: "Pricing", href: "#" },
-  { name: "About", href: "#" },
 ];
 
 const Header = () => {
   const [menuState, setMenuState] = useState(false);
+
+  useEffect(() => {
+    if (menuState) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup just in case
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuState]);
   return (
-    <header>
+    <header className="max-w-screen">
       <nav
         data-state={menuState && "active"}
-        className="group fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
+        className="group fixed top-0 left-0 z-20 w-full bg-transparent"
       >
-        <div className="m-auto max-w-7xl px-6">
-          <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-            <div className="flex w-full justify-between lg:w-auto">
-              <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
-                <Image
-                  className="hidden dark:block"
-                  src={lightLogo}
-                  alt="app illustration"
-                  width={170}
-                  height={80}
-                />
-                <Image
-                  className="dark:hidden"
-                  src={darkLogo}
-                  alt="app illustration"
-                  width={170}
-                  height={80}
-                />
-              </Link>
+        <div className="m-auto md:px-20 px-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 py-6 lg:gap-0 lg:py-10 overflow-hidden">
+            <div className="flex w-full justify-between">
+              <div className="z-20 text-foreground lg:text-4xl text-2xl font-bold">
+                <Link
+                  href="/"
+                  aria-label="home"
+                  className="flex items-center space-x-2"
+                >
+                  <Image
+                    className="block"
+                    src={lightLogo}
+                    alt="app illustration"
+                    width={170}
+                    height={80}
+                  />
+                </Link>
+              </div>
 
               <button
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                className="relative z-20  block cursor-pointer lg:p-2 p-1 rounded-xl backdrop-blur-2xl bg-primary/60 hover:bg-primary/80 duration-300"
               >
-                <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                <Menu className="text-foreground group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto lg:size-10 size-8 duration-200" />
+                <X className="text-foreground group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto lg:size-10 size-8 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
             </div>
 
-            <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-              <div className="lg:pr-4">
-                <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
-                  {menuItems.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                      >
-                        <span>{item.name}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <AnimatePresence>
+              {menuState && (
+                <>
+                  <motion.div
+                    initial={{
+                      height: "0",
+                      width: "100vw",
+                      left: "0",
+                      overflow: "hidden",
+                    }}
+                    animate={{
+                      height: "100vh",
+                      width: "100vw",
+                      left: "0",
+                      overflow: "hidden",
+                    }}
+                    exit={{
+                      height: "0",
+                      width: "100vw",
+                      left: "0",
+                      overflow: "hidden",
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      ease: easeInOut,
+                      type: "spring",
+                      stiffness: 50,
+                      damping: 16,
+                      mass: 1.5,
+                    }}
+                    className="absolute top-0 bg-background/30 backdrop-blur-xl flex-wrap items-center justify-start rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
+                  >
+                    <div className="lg:pr-4">
+                      <ul className="pt-40 pb-18 text-base lg:flex lg:flex-col lg:gap-12 space-y-12 lg:space-y-0 lg:text-sm">
+                        {menuItems.map((item, index) => (
+                          <li key={index}>
+                            <Link
+                              href={item.href}
+                              className="text-foreground/80 hover:text-secondary font-bold block duration-150 lg:text-5xl text-3xl"
+                            >
+                              <span>{item.name}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
-                <Button variant="outline" size="sm">
-                  <Link href="#">
-                    <span>Contact Us</span>
-                  </Link>
-                </Button>
-              </div>
-            </div>
+                    <div className="flex w-full flex-col space-y-3 sm:gap-3 sm:space-y-0 md:w-fit">
+                      <Button variant="outline" size="lg">
+                        <Link href="#">
+                          <span className="md:text-xl text-base">
+                            Contact Us
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </nav>
     </header>
   );
 };
-
-function Logo({ className }) {
-  return (
-    <svg
-      viewBox="0 0 78 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn("h-5 w-auto", className)}
-    >
-      <path
-        d="M3 0H5V18H3V0ZM13 0H15V18H13V0ZM18 3V5H0V3H18ZM0 15V13H18V15H0Z"
-        fill="url(#logo-gradient)"
-      />
-      {/* Truncated for brevity */}
-      <defs>
-        <linearGradient
-          id="logo-gradient"
-          x1="10"
-          y1="0"
-          x2="10"
-          y2="20"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#9B99FE" />
-          <stop offset="1" stopColor="#2BC8B7" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
 
 export default Header;
