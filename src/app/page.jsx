@@ -13,9 +13,9 @@ export default function Home() {
 
       <main>
         <section className="overflow-hidden">
-          <div className="relative mx-auto px-4 md:px-20 py-32 lg:py-28  min-h-screen md:min-h-0">
+          <div className="relative mx-auto px-4 md:px-20 py-32 lg:py-30  min-h-screen md:min-h-0">
             <div className="">
-              <div className="relative z-10 mx-auto w-full text-center">
+              <div className="relative z-10 mx-auto w-full">
                 <Link
                   href="/"
                   className="rounded-lg mx-auto flex w-fit items-center gap-2 border p-1 pr-3 lg"
@@ -28,11 +28,11 @@ export default function Home() {
                   <ArrowRight className="size-4" />
                 </Link>
 
-                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-7xl">
+                <h1 className="mt-10 text-balance text-start md:text-center text-4xl font-bold md:text-5xl xl:text-7xl">
                   Fueling Business Growth with
                   <p className="text-accent">Smart Digital Strategies</p>
                 </h1>
-                <p className="mt-8 uppercase max-w-xl mx-auto">
+                <p className="text-start md:text-center mt-8 uppercase max-w-2xl mx-auto text-xs md:text-base">
                   It's more than a marketing agency—it's a catalyst for brand
                   transformation, turning vision into impact and engagement into
                   loyalty.
@@ -40,7 +40,7 @@ export default function Home() {
 
                 <div>
                   <form action="" className="mx-auto my-10 max-w-sm lg:my-12">
-                    <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[1rem] border pr-1 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
+                    <div className="bg-input has-[input:focus]:ring-ring relative grid grid-cols-[1fr_auto] items-center rounded-[1rem] border pr-1 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
                       <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
                       <input
                         placeholder="Your mail address"
@@ -49,10 +49,12 @@ export default function Home() {
                       />
                       <div className="md:pr-1.5 lg:pr-0">
                         <Button
-                          className="cursor-pointer text-gray-400 hover:text-white"
+                          className="cursor-pointer text-muted"
                           aria-label="submit"
                         >
-                          <span className="hidden md:block">Get Started</span>
+                          <span className="hidden md:block text-muted">
+                            Get Started
+                          </span>
                           <SendHorizonal
                             className="relative mx-auto size-5 md:hidden"
                             strokeWidth={2}

@@ -43,10 +43,9 @@ const Header = () => {
                   className="flex items-center space-x-2"
                 >
                   <Image
-                    className="block"
+                    className="block w-44 md:w-52"
                     src={lightLogo}
                     alt="app illustration"
-                    width={170}
                     height={80}
                   />
                 </Link>
