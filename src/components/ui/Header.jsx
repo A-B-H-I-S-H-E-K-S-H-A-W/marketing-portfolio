@@ -9,9 +9,8 @@ import Link from "next/link";
 const menuItems = [
   { name: "Home", href: "#" },
   { name: "About", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Solution", href: "#" },
-  { name: "Pricing", href: "#" },
+  { name: "Expertise", href: "#" },
+  { name: "Contact Us", href: "#" },
 ];
 
 const Header = () => {
@@ -43,7 +42,7 @@ const Header = () => {
                   className="flex items-center space-x-2"
                 >
                   <Image
-                    className="block w-44 md:w-52"
+                    className="block w-44 md:w-56"
                     src={lightLogo}
                     alt="app illustration"
                     height={80}
@@ -94,7 +93,7 @@ const Header = () => {
                     className="absolute max-h-dvh top-0 bg-muted/50 backdrop-blur-xl flex flex-col items-start justify-between rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
                   >
                     <div className="lg:pr-4">
-                      <ul className="pt-30 text-base lg:flex lg:flex-col space-y-6 lg:space-y-12 lg:text-sm">
+                      <ul className="pt-32 text-base lg:flex lg:flex-col space-y-6 lg:space-y-12 lg:text-sm">
                         {menuItems.map((item, index) => (
                           <li key={index}>
                             <Link
