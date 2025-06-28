@@ -30,7 +30,7 @@ export default function Home() {
 
                 <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-7xl">
                   Fueling Business Growth with
-                  <p className="text-yellow-400">Smart Digital Strategies</p>
+                  <p className="text-accent">Smart Digital Strategies</p>
                 </h1>
                 <p className="mt-8 uppercase max-w-xl mx-auto">
                   It's more than a marketing agency—it's a catalyst for brand

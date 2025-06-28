@@ -55,10 +55,10 @@ const Header = () => {
               <button
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="relative z-20  block cursor-pointer lg:p-2 p-1 rounded-xl backdrop-blur-2xl bg-primary/60 hover:bg-primary/80 duration-300"
+                className="relative z-20  block cursor-pointer lg:p-2 p-1 rounded-xl backdrop-blur-2xl bg-primary hover:bg-primary/90 duration-300"
               >
-                <Menu className="text-foreground group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto lg:size-10 size-8 duration-200" />
-                <X className="text-foreground group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto lg:size-10 size-8 -rotate-180 scale-0 opacity-0 duration-200" />
+                <Menu className="text-secondary group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto lg:size-10 size-8 duration-200" />
+                <X className="text-secondary group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto lg:size-10 size-8 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
             </div>
 
@@ -92,7 +92,7 @@ const Header = () => {
                       damping: 16,
                       mass: 1.5,
                     }}
-                    className="absolute max-h-dvh top-0 bg-background/30 backdrop-blur-xl flex flex-col items-start justify-between rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
+                    className="absolute max-h-dvh top-0 bg-muted/50 backdrop-blur-xl flex flex-col items-start justify-between rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
                   >
                     <div className="lg:pr-4">
                       <ul className="pt-30 text-base lg:flex lg:flex-col space-y-6 lg:space-y-12 lg:text-sm">
@@ -100,7 +100,7 @@ const Header = () => {
                           <li key={index}>
                             <Link
                               href={item.href}
-                              className="text-foreground/80 hover:text-secondary font-bold block duration-150 lg:text-5xl text-3xl"
+                              className="text-foreground/80 hover:text-primary font-bold block duration-150 lg:text-5xl text-3xl"
                             >
                               <span>{item.name}</span>
                             </Link>
@@ -110,7 +110,11 @@ const Header = () => {
                     </div>
 
                     <div className="pb-12 md:py-8 flex w-full flex-col justify-end">
-                      <Button variant="outline" size="lg">
+                      <Button
+                        variant="default"
+                        size="lg"
+                        className="cursor-pointer text-secondary"
+                      >
                         <Link href="#">
                           <span className="md:text-xl text-base">
                             Contact Us
