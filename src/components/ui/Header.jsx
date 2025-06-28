@@ -23,8 +23,6 @@ const Header = () => {
     } else {
       document.body.style.overflow = "";
     }
-
-    // Cleanup just in case
     return () => {
       document.body.style.overflow = "";
     };
@@ -94,10 +92,10 @@ const Header = () => {
                       damping: 16,
                       mass: 1.5,
                     }}
-                    className="absolute top-0 bg-background/30 backdrop-blur-xl flex-wrap items-center justify-start rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
+                    className="absolute max-h-dvh top-0 bg-background/30 backdrop-blur-xl flex flex-col items-start justify-between rounded-2xl border md:px-20 px-5 shadow-2xl shadow-zinc-300/60 overflow-hidden"
                   >
                     <div className="lg:pr-4">
-                      <ul className="pt-40 pb-18 text-base lg:flex lg:flex-col lg:gap-12 space-y-12 lg:space-y-0 lg:text-sm">
+                      <ul className="pt-30 text-base lg:flex lg:flex-col space-y-6 lg:space-y-12 lg:text-sm">
                         {menuItems.map((item, index) => (
                           <li key={index}>
                             <Link
@@ -111,7 +109,7 @@ const Header = () => {
                       </ul>
                     </div>
 
-                    <div className="flex w-full flex-col space-y-3 sm:gap-3 sm:space-y-0 md:w-fit">
+                    <div className="pb-12 md:py-8 flex w-full flex-col justify-end">
                       <Button variant="outline" size="lg">
                         <Link href="#">
                           <span className="md:text-xl text-base">
