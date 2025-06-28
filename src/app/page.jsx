@@ -39,7 +39,10 @@ export default function Home() {
                 </p>
 
                 <div>
-                  <form action="" className="mx-auto my-10 max-w-sm lg:my-12">
+                  <form
+                    action=""
+                    className="mx-auto my-10 md:max-w-sm lg:my-12"
+                  >
                     <div className="bg-input has-[input:focus]:ring-ring relative grid grid-cols-[1fr_auto] items-center rounded-[1rem] border pr-1 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
                       <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
                       <input

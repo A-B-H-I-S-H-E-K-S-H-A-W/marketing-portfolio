@@ -32,7 +32,7 @@ const Header = () => {
         data-state={menuState && "active"}
         className="group fixed top-0 left-0 z-20 w-full bg-transparent"
       >
-        <div className="m-auto md:px-20 px-6">
+        <div className="m-auto md:px-20 px-4">
           <div className="flex flex-wrap items-center justify-between gap-3 py-6 lg:gap-0 lg:py-10 overflow-hidden">
             <div className="flex w-full justify-between">
               <div className="z-20 text-foreground lg:text-4xl text-2xl font-bold">
