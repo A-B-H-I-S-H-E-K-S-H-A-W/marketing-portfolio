@@ -8,6 +8,7 @@ import Header from "@/components/ui/Header";
 export default function Home() {
   return (
     <>
+      <div className="absolute top-0 left-0 z-[1] h-screen w-screen bg-gradient-to-br from-background via-secondary to-muted"></div>
       <Header />
 
       <main>
@@ -31,7 +32,7 @@ export default function Home() {
                   Fueling Business Growth with
                   <p className="text-yellow-400">Smart Digital Strategies</p>
                 </h1>
-                <p className="mt-8">
+                <p className="mt-8 uppercase max-w-xl mx-auto">
                   It's more than a marketing agency—it's a catalyst for brand
                   transformation, turning vision into impact and engagement into
                   loyalty.
