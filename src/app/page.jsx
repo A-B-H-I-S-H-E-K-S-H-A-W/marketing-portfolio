@@ -26,7 +26,7 @@ export default function Home() {
           transition={{
             type: "tween",
             ease: easeInOut,
-            duration: 2,
+            duration: 2.5,
           }}
           className="absolute -right-40 bottom-28 h-[900px] w-[900px] bg-gradient-to-br from-accent via-secondary to-muted  rounded-full shadow-2xl shadow-foreground/60"
         ></motion.div>
