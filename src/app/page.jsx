@@ -4,17 +4,39 @@ import { ArrowRight, Mail, SendHorizonal } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
+import { easeInOut, motion } from "framer-motion";
 
 export default function Home() {
   return (
     <>
-      <div className="absolute top-0 left-0 z-[1] h-screen inset-0 w-full bg-gradient-to-br from-background via-secondary to-muted"></div>
+      <div className="absolute top-0 left-0 z-[1] h-screen inset-0 w-full bg-gradient-to-br from-background via-secondary to-muted overflow-hidden">
+        <motion.div
+          initial={{ left: "-800px", top: "800px" }}
+          animate={{ left: "-160px", top: "112px" }}
+          transition={{
+            type: "tween",
+            ease: easeInOut,
+            duration: 2.5,
+          }}
+          className="absolute -left-40 top-28 h-[900px] w-[900px] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
+        ></motion.div>
+        <motion.div
+          initial={{ right: "-800px", bottom: "800px" }}
+          animate={{ right: "-160px", bottom: "112px" }}
+          transition={{
+            type: "tween",
+            ease: easeInOut,
+            duration: 2,
+          }}
+          className="absolute -right-40 bottom-28 h-[900px] w-[900px] bg-gradient-to-br from-accent via-secondary to-muted  rounded-full shadow-2xl shadow-foreground/60"
+        ></motion.div>
+      </div>
 
       <Header />
 
       <main>
         <section className="overflow-hidden">
-          <div className="relative mx-auto px-4 md:px-20 py-32 lg:py-36 max-w-screen min-h-[200vh]">
+          <div className="relative mx-auto px-4 md:px-20 py-32 lg:py-10 max-w-screen min-h-[200vh]">
             <div className="relative z-10 flex flex-col items-start">
               <Link
                 href="/"
