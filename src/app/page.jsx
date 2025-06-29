@@ -51,7 +51,7 @@ export default function Home() {
               </Link>
 
               <h1 className="mt-10 text-balance text-start text-4xl font-bold md:text-5xl xl:text-7xl">
-                Fueling Business
+                Fueling Business with
                 <p className="text-accent">Smart Digital Strategies</p>
               </h1>
               <p className="text-start mt-8 uppercase max-w-xl text-xs md:text-base">
