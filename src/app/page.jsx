@@ -10,7 +10,7 @@ import HeroModal from "@/components/ui/HeroModal";
 export default function Home() {
   return (
     <>
-      <div className="relative h-[120vh] overflow-hidden pb-20">
+      <div className="relative min-h-[120vh] overflow-hidden">
         <div className="absolute top-0 left-0 -z-[1]  inset-0 w-full bg-gradient-to-br from-background via-secondary to-muted overflow-hidden"></div>
         <motion.div
           initial={{ left: "-800px", top: "800px" }}
