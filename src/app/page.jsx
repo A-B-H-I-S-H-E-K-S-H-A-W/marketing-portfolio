@@ -10,27 +10,27 @@ import HeroModal from "@/components/ui/HeroModal";
 export default function Home() {
   return (
     <>
-      <div className="relative h-[120vh] overflow-hidden">
+      <div className="relative h-[120vh] overflow-hidden pb-20">
         <div className="absolute top-0 left-0 -z-[1]  inset-0 w-full bg-gradient-to-br from-background via-secondary to-muted overflow-hidden"></div>
         <motion.div
           initial={{ left: "-800px", top: "800px" }}
-          animate={{ left: "-160px", top: "112px" }}
+          animate={{ left: "-155px", top: "112px" }}
           transition={{
             type: "tween",
             ease: easeInOut,
             duration: 2.5,
           }}
-          className="absolute -left-40 top-28 md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
+          className="absolute md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
         ></motion.div>
         <motion.div
           initial={{ right: "-800px", bottom: "800px" }}
-          animate={{ right: "-190px", bottom: "150px" }}
+          animate={{ right: "-168px", bottom: "180px" }}
           transition={{
             type: "tween",
             ease: easeInOut,
             duration: 2.5,
           }}
-          className="absolute -right-40 bottom-28 md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted  rounded-full shadow-2xl shadow-foreground/60"
+          className="absolute md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted  rounded-full shadow-2xl shadow-foreground/60"
         ></motion.div>
 
         <Header />
