@@ -13,7 +13,7 @@ const menuItems = [
   { name: "Contact Us", href: "#" },
 ];
 
-const Header = () => {
+const Header = ({ className }) => {
   const [menuState, setMenuState] = useState(false);
 
   useEffect(() => {
@@ -28,9 +28,12 @@ const Header = () => {
   }, [menuState]);
   return (
     <header className="max-w-screen">
-      <nav
+      <motion.nav
+        initial={{ position: "relative", top: "-2rem", opacity: 0 }}
+        animate={{ position: "relative", top: "0rem", opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
         data-state={menuState && "active"}
-        className="group relative z-20 w-full"
+        className={`group relative z-20 w-full ${className}`}
       >
         <div className="m-auto md:px-20 px-4">
           <div className="flex flex-wrap items-center justify-between gap-3 py-6 lg:gap-0 lg:py-10 overflow-hidden">
@@ -126,7 +129,7 @@ const Header = () => {
             </AnimatePresence>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 };

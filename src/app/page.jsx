@@ -40,29 +40,50 @@ export default function Home() {
             <div className="relative mx-auto px-4 md:px-20 py-32 lg:py-10 max-w-screen">
               <div className="grid gap-10 grid-cols-1 md:grid-cols-[60%_40%]">
                 <div className="relative z-10 flex flex-col items-start">
-                  <Link
-                    href="/"
-                    className="rounded-lg flex w-fit items-center gap-2 border p-1 pr-3 lg"
+                  <motion.div
+                    initial={{ position: "relative", top: "-2rem", opacity: 0 }}
+                    animate={{ position: "relative", top: "0rem", opacity: 1 }}
+                    transition={{ duration: 1.5, delay: 1 }}
                   >
-                    <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
-                      New
-                    </span>
-                    <span className="text-sm">Introduction Tailark Html</span>
-                    <span className="bg-border block h-4 w-px"></span>
-                    <ArrowRight className="size-4" />
-                  </Link>
+                    <Link
+                      href="/"
+                      className="rounded-lg flex w-fit items-center gap-2 border p-1 pr-3 lg"
+                    >
+                      <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
+                        New
+                      </span>
+                      <span className="text-sm">Introduction Tailark Html</span>
+                      <span className="bg-border block h-4 w-px"></span>
+                      <ArrowRight className="size-4" />
+                    </Link>
+                  </motion.div>
 
-                  <h1 className="mt-10 text-balance text-start text-4xl font-bold md:text-5xl xl:text-7xl">
+                  <motion.h1
+                    initial={{ position: "relative", top: "-2rem", opacity: 0 }}
+                    animate={{ position: "relative", top: "0rem", opacity: 1 }}
+                    transition={{ duration: 1.2, delay: 1.3 }}
+                    className="mt-10 text-balance text-start text-4xl font-bold md:text-5xl xl:text-7xl"
+                  >
                     Fueling Business with
                     <p className="text-accent">Smart Digital Strategies</p>
-                  </h1>
-                  <p className="text-start mt-8 uppercase max-w-xl text-xs md:text-base">
+                  </motion.h1>
+                  <motion.p
+                    initial={{ position: "relative", top: "-2rem", opacity: 0 }}
+                    animate={{ position: "relative", top: "0rem", opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                    className="text-start mt-8 uppercase max-w-xl text-xs md:text-base"
+                  >
                     It's more than a marketing agency—it's a catalyst for brand
                     transformation, turning vision into impact and engagement
                     into loyalty.
-                  </p>
+                  </motion.p>
 
-                  <div className="w-full md:w-sm">
+                  <motion.div
+                    initial={{ position: "relative", top: "-2rem", opacity: 0 }}
+                    animate={{ position: "relative", top: "0rem", opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1.8 }}
+                    className="w-full md:w-sm"
+                  >
                     <form
                       action=""
                       className="mx-auto my-10 md:max-w-sm lg:my-12"
@@ -90,7 +111,7 @@ export default function Home() {
                         </div>
                       </div>
                     </form>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="relative z-10">
                   <HeroModal className={""} />
