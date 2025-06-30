@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import { easeInOut, motion } from "framer-motion";
 
 const HeroModal = ({ className }) => {
   const chartData = [
@@ -22,7 +23,10 @@ const HeroModal = ({ className }) => {
   ];
 
   return (
-    <div
+    <motion.div
+      initial={{ position: "relative", top: "-5rem", opacity: 0 }}
+      animate={{ position: "relative", top: "0rem", opacity: 1 }}
+      transition={{ duration: 1, delay: 1, ease: easeInOut }}
       className={`h-96 border border-foreground rounded-2xl backdrop-blur-xl shadow-2xl shadow-foreground/40 ${className}`}
     >
       <div className="py-2 px-1 text-foreground h-full">
@@ -44,7 +48,7 @@ const HeroModal = ({ className }) => {
               />
               <Bar
                 dataKey="sales"
-                fill="#ffffff"
+                fill="#ffffff80"
                 radius={[4, 4, 0, 0]}
                 activeBar={{ fill: "#ffffff80" }}
               />
@@ -52,7 +56,7 @@ const HeroModal = ({ className }) => {
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
