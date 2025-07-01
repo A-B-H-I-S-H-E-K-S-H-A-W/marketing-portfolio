@@ -6,7 +6,6 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
-import { VelocityScroll } from "@/components/ui/VelocityText";
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ export default function Home() {
         ></motion.div>
         <motion.div
           initial={{ right: "-800px", bottom: "800px" }}
-          animate={{ right: "-168px", bottom: "180px" }}
+          animate={{ right: "-188px", bottom: "210px" }}
           transition={{
             type: "tween",
             ease: easeInOut,
@@ -123,7 +122,6 @@ export default function Home() {
         </main>
       </div>
       <div className="min-h-screen bg-gradient-to-bl from-5% from-muted via-secondary to-background">
-        <VelocityScroll>Digital Marketing</VelocityScroll>
         
       </div>
     </>
