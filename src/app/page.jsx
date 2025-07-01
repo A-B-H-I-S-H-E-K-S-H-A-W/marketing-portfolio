@@ -6,12 +6,11 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
-
 export default function Home() {
   return (
     <>
-      <div className="relative min-h-[120vh] overflow-hidden">
-        <div className="absolute top-0 left-0 -z-[1]  inset-0 w-full bg-gradient-to-br from-background via-secondary to-muted overflow-hidden"></div>
+      <div className="relative min-h-[120vh] bg-gradient-to-br from-background via-secondary to-muted overflow-hidden">
+        <div className="absolute top-0 left-0 -z-[1] max-h-screen inset-0 w-full overflow-hidden"></div>
         <motion.div
           initial={{ left: "-800px", top: "800px" }}
           animate={{ left: "-155px", top: "112px" }}
@@ -121,8 +120,36 @@ export default function Home() {
           </section>
         </main>
       </div>
-      <div className="min-h-screen bg-gradient-to-bl from-5% from-muted via-secondary to-background">
-        
+      <div className="relative px-4 md:px-20 md:py-48 py-8 min-h-screen bg-gradient-to-bl from-5% from-muted via-50% via-secondary to-75% to-background overflow-hidden">
+        <motion.div
+          initial={{ left: "-800px", top: "-65px" }}
+          animate={{ left: "-155px", top: "-775px" }}
+          transition={{
+            type: "tween",
+            ease: easeInOut,
+            duration: 2.5,
+          }}
+          className="absolute md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
+        ></motion.div>
+        <div className="relative z-10 grid md:grid-cols-2">
+          <div className="max-w-lg">
+            <div className="flex flex-col gap-10">
+              <h2 className="md:text-6xl text-3xl font-bold">
+                We're strategic digital marketing agency
+              </h2>
+              <p className="uppercase text-xs md:text-base">
+                We’ve created a full-stack structure for our working workflow
+                processe, were from the funny the century initial all made, have
+                spare to negatives{" "}
+              </p>
+
+              <div>
+                <Button className="text-muted">Check out</Button>
+              </div>
+            </div>
+          </div>
+          <div className="relative"></div>
+        </div>
       </div>
     </>
   );
