@@ -13,7 +13,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 -z-[1] max-h-screen inset-0 w-full overflow-hidden"></div>
         <motion.div
           initial={{ left: "-800px", top: "800px" }}
-          animate={{ left: "-155px", top: "112px" }}
+          animate={{ left: "-165px", top: "112px" }}
           transition={{
             type: "tween",
             ease: easeInOut,
@@ -123,7 +123,7 @@ export default function Home() {
       <div className="relative px-4 md:px-20 md:py-48 py-8 min-h-screen bg-gradient-to-bl from-5% from-muted via-50% via-secondary to-75% to-background overflow-hidden">
         <motion.div
           initial={{ left: "-800px", top: "-65px" }}
-          animate={{ left: "-155px", top: "-775px" }}
+          animate={{ left: "-165px", top: "-774px" }}
           transition={{
             type: "tween",
             ease: easeInOut,
