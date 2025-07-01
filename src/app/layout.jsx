@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ace Productions",
+  icons: {
+    icon: "/logo.png",
+  },
   description:
     "Ace Productions is a results-driven marketing agency specializing in digital strategies, influencer marketing, brand growth, lead generation, and product promotions. We help businesses elevate visibility and boost sales through smart, creative advertising campaigns.",
 };
