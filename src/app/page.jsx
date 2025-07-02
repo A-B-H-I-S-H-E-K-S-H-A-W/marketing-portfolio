@@ -6,24 +6,30 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
+import { useEffect, useState } from "react";
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < breakpoint);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 export default function Home() {
+  const isMobile = useIsMobile();
   return (
     <>
-      <div className="relative min-h-[120vh] bg-gradient-to-br from-background via-secondary to-muted overflow-hidden">
+      <div className="relative min-h-[100vh] bg-gradient-to-br from-background via-secondary to-muted overflow-hidden">
         <div className="absolute top-0 left-0 -z-[1] max-h-screen inset-0 w-full overflow-hidden"></div>
+
         <motion.div
-          initial={{ left: "-800px", top: "800px" }}
-          animate={{ left: "-165px", top: "112px" }}
-          transition={{
-            type: "tween",
-            ease: easeInOut,
-            duration: 2.5,
-          }}
-          className="absolute md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
-        ></motion.div>
-        <motion.div
-          initial={{ right: "-800px", bottom: "800px" }}
-          animate={{ right: "-188px", bottom: "210px" }}
+          initial={{ right: "-800px", bottom: "700px" }}
+          animate={{ right: "-168px", bottom: isMobile ? 290 : 80 }}
           transition={{
             type: "tween",
             ease: easeInOut,
@@ -121,16 +127,6 @@ export default function Home() {
         </main>
       </div>
       <div className="relative px-4 md:px-20 md:py-48 py-8 min-h-screen bg-gradient-to-bl from-5% from-muted via-50% via-secondary to-75% to-background overflow-hidden">
-        <motion.div
-          initial={{ left: "-800px", top: "-65px" }}
-          animate={{ left: "-165px", top: "-774px" }}
-          transition={{
-            type: "tween",
-            ease: easeInOut,
-            duration: 2.5,
-          }}
-          className="absolute md:h-[900px] h-[46rem] md:w-[900px] w-[46rem] bg-gradient-to-br from-accent via-secondary to-muted rounded-full shadow-2xl shadow-foreground/90"
-        ></motion.div>
         <div className="relative z-10 grid md:grid-cols-2">
           <div className="max-w-lg">
             <div className="flex flex-col gap-10">
@@ -140,7 +136,7 @@ export default function Home() {
               <p className="uppercase text-xs md:text-base">
                 We’ve created a full-stack structure for our working workflow
                 processe, were from the funny the century initial all made, have
-                spare to negatives{" "}
+                spare to negatives
               </p>
 
               <div>
@@ -148,7 +144,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative"></div>
+          <div></div>
         </div>
       </div>
     </>
