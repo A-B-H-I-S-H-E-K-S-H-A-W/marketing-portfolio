@@ -7,6 +7,7 @@ import Header from "@/components/ui/Header";
 import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
 import { useEffect, useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -29,7 +30,7 @@ export default function Home() {
 
         <motion.div
           initial={{ right: "-800px", bottom: "700px" }}
-          animate={{ right: "-168px", bottom: isMobile ? 290 : 80 }}
+          animate={{ right: "-168px", bottom: isMobile ? 290 : 70 }}
           transition={{
             type: "tween",
             ease: easeInOut,
@@ -130,18 +131,23 @@ export default function Home() {
         <div className="relative z-10 grid md:grid-cols-2">
           <div className="max-w-lg">
             <div className="flex flex-col gap-10">
-              <h2 className="md:text-6xl text-3xl font-bold">
-                We're strategic digital marketing agency
-              </h2>
-              <p className="uppercase text-xs md:text-base">
-                We’ve created a full-stack structure for our working workflow
-                processe, were from the funny the century initial all made, have
-                spare to negatives
-              </p>
+              <FadeIn>
+                <h2 className="md:text-6xl text-3xl font-bold">
+                  We're strategic{" "}
+                  <p className="text-accent">digital marketing agency</p>
+                </h2>
+                <p className="uppercase text-xs md:text-base mt-5">
+                  We’ve created a full-stack structure for our working workflow
+                  processe, were from the funny the century initial all made,
+                  have spare to negatives
+                </p>
+              </FadeIn>
 
-              <div>
-                <Button className="text-muted">Check out</Button>
-              </div>
+              <FadeIn>
+                <Button className="text-muted cursor-pointer font-bold">
+                  Check out
+                </Button>
+              </FadeIn>
             </div>
           </div>
           <div></div>
