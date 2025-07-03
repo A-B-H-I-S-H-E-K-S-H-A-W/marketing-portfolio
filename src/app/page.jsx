@@ -154,7 +154,7 @@ export default function Home() {
                         {number}
                       </div>
                       <div className="pl-10">
-                        <h2 className="text-2xl text-muted font-semibold mb-2">
+                        <h2 className="text-2xl text-muted font-bold mb-2">
                           {title}
                         </h2>
                         <p className="text-muted text-lg font-medium">
