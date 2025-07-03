@@ -8,6 +8,7 @@ import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
 import { useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import { strategies } from "@/data";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,7 +26,7 @@ export default function Home() {
   const isMobile = useIsMobile();
   return (
     <>
-      <div className="relative min-h-[100vh] bg-gradient-to-br from-background via-secondary to-muted overflow-hidden">
+      <div className="relative min-h-[100vh] bg-gradient-to-b from-background via-secondary to-muted overflow-hidden">
         <div className="absolute top-0 left-0 -z-[1] max-h-screen inset-0 w-full overflow-hidden"></div>
 
         <motion.div
@@ -127,20 +128,15 @@ export default function Home() {
           </section>
         </main>
       </div>
-      <div className="relative px-4 md:px-20 md:py-48 py-8 min-h-screen bg-gradient-to-bl from-5% from-muted via-50% via-secondary to-75% to-background overflow-hidden">
-        <div className="relative z-10 grid md:grid-cols-2">
-          <div className="max-w-lg">
+      <div className="relative px-4 md:px-20 md:py-28 py-8 min-h-screen bg-gradient-to-b from-10% from-muted via-70% via-secondary to-background overflow-hidden">
+        <div className="relative z-10">
+          <div className="">
             <div className="flex flex-col gap-10">
               <FadeIn>
                 <h2 className="md:text-6xl text-3xl font-bold">
                   We're strategic{" "}
                   <p className="text-accent">digital marketing agency</p>
                 </h2>
-                <p className="uppercase text-xs md:text-base mt-5">
-                  We’ve created a full-stack structure for our working workflow
-                  processe, were from the funny the century initial all made,
-                  have spare to negatives
-                </p>
               </FadeIn>
 
               <FadeIn>
@@ -149,8 +145,28 @@ export default function Home() {
                 </Button>
               </FadeIn>
             </div>
+            <div className="mt-20">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {strategies.map(({ number, title, description }) => (
+                  <FadeIn key={number}>
+                    <div className="relative bg-gradient-to-tl from-30% from-primary to-secondary rounded-2xl shadow-md p-6 flex items-center text-center hover:shadow-xl transition-all duration-300">
+                      <div className="absolute md:-left-6 -left-5 text-[150px] font-extrabold text-foreground mb-4">
+                        {number}
+                      </div>
+                      <div className="pl-10">
+                        <h2 className="text-2xl text-muted font-semibold mb-2">
+                          {title}
+                        </h2>
+                        <p className="text-muted text-lg font-medium">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
           </div>
-          <div></div>
         </div>
       </div>
     </>
