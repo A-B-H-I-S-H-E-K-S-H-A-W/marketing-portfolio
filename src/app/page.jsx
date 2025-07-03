@@ -8,7 +8,11 @@ import { easeInOut, motion } from "framer-motion";
 import HeroModal from "@/components/ui/HeroModal";
 import { useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
-import { strategies } from "@/data";
+import { items, strategies } from "@/data";
+import {
+  DraggableCard,
+  DraggableCardContainer,
+} from "@/components/DragggableCards";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -177,7 +181,25 @@ export default function Home() {
 
       {/* Works Section */}
       <div className="relative px-4 md:px-20 md:py-28 py-8 min-h-screen bg-foreground overflow-hidden">
-        <div></div>
+        <div>
+          <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
+            <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
+              If its your first day at Fight Club, you have to fight.
+            </p>
+            {items.map((item) => (
+              <DraggableCard key={item.title} className={item.className}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="pointer-events-none relative z-10 h-80 w-80 object-cover"
+                />
+                <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
+                  {item.title}
+                </h3>
+              </DraggableCard>
+            ))}
+          </DraggableCardContainer>
+        </div>
       </div>
     </>
   );
