@@ -26,6 +26,7 @@ export default function Home() {
   const isMobile = useIsMobile();
   return (
     <>
+      {/* Hero Section */}
       <div className="relative min-h-[100vh] bg-gradient-to-b from-background via-secondary to-muted overflow-hidden">
         <div className="absolute top-0 left-0 -z-[1] max-h-screen inset-0 w-full overflow-hidden"></div>
 
@@ -128,7 +129,10 @@ export default function Home() {
           </section>
         </main>
       </div>
-      <div className="relative px-4 md:px-20 md:py-28 py-8 min-h-screen bg-gradient-to-b from-10% from-muted via-70% via-secondary to-background overflow-hidden">
+      {/* Hero Section Ends */}
+
+      {/* About Section */}
+      <div className="relative px-4 md:px-20 md:py-28 py-8 min-h-screen bg-gradient-to-b from-10% from-muted via-70% via-secondary to-foreground overflow-hidden">
         <div className="relative z-10">
           <div className="">
             <div className="flex flex-col gap-10">
@@ -168,6 +172,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      {/* About Section Ends */}
+
+      {/* Works Section */}
+      <div className="relative px-4 md:px-20 md:py-28 py-8 min-h-screen bg-foreground overflow-hidden">
+        <div></div>
       </div>
     </>
   );
