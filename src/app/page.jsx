@@ -71,9 +71,9 @@ export default function Home() {
                       className="rounded-lg flex w-fit items-center gap-2 border p-1 pr-3 lg"
                     >
                       <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
-                        New
+                        Ace Productions
                       </span>
-                      <span className="text-sm">Introduction Tailark Html</span>
+                      <span className="text-sm">Marketing Agency</span>
                       <span className="bg-border block h-4 w-px"></span>
                       <ArrowRight className="size-4" />
                     </Link>
