@@ -184,7 +184,7 @@ export default function Home() {
       <div className="relative px-4 md:px-20 min-h-screen bg-gradient-to-b from-foreground to-secondary overflow-hidden">
         <div>
           <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
-            <span className="absolute text-background uppercase top-1/2 mx-auto max-w-full -translate-y-3/4 text-center text-5xl font-black md:text-7xl">
+            <span className="absolute text-background uppercase top-1/2 mx-auto max-w-full -translate-y-3/4 text-center text-5xl font-bold md:text-7xl">
               We’re not just a{" "}
               <h2 className="text-secondary"> marketing agency.</h2>
               We’re the force behind your{" "}
