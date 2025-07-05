@@ -1,3 +1,12 @@
+import card1 from "../assets/card/card-1.jpg";
+import card2 from "../assets/card/card-2.jpg";
+import card3 from "../assets/card/card-3.jpg";
+import card4 from "../assets/card/card-4.jpg";
+import card5 from "../assets/card/card-5.jpg";
+import card6 from "../assets/card/card-6.jpg";
+import card7 from "../assets/card/card-7.jpg";
+import card8 from "../assets/card/card-8.jpg";
+
 export const strategies = [
   {
     number: 1,
@@ -22,44 +31,42 @@ export const strategies = [
 export const items = [
   {
     title: "Tyler Durden",
-    image:
-      "https://images.unsplash.com/photo-1732310216648-603c0255c000?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-10 left-[20%] rotate-[-5deg]",
+    image: card1,
+    className: "absolute top-10 left-[20%] rotate-[-5deg] cursor-pointer",
   },
   {
     title: "The Narrator",
-    image:
-      "https://images.unsplash.com/photo-1697909623564-3dae17f6c20b?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-40 left-[25%] rotate-[-7deg]",
+    image: card2,
+    className: "absolute top-40 left-[25%] rotate-[-7deg] cursor-pointer",
   },
   {
     title: "Iceland",
-    image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-5 left-[40%] rotate-[8deg]",
+    image: card3,
+    className: "absolute top-5 left-[40%] rotate-[8deg] cursor-pointer",
   },
   {
     title: "Japan",
-    image:
-      "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=3648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-32 left-[55%] rotate-[10deg]",
+    image: card4,
+    className: "absolute top-32 left-[55%] rotate-[10deg] cursor-pointer",
   },
   {
     title: "Norway",
-    image:
-      "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-20 right-[35%] rotate-[2deg]",
+    image: card5,
+    className: "absolute top-20 right-[35%] rotate-[2deg] cursor-pointer",
   },
   {
     title: "New Zealand",
-    image:
-      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=3070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-24 left-[45%] rotate-[-7deg]",
+    image: card6,
+    className: "absolute top-24 left-[45%] rotate-[-7deg] cursor-pointer",
   },
   {
     title: "Canada",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "absolute top-8 left-[30%] rotate-[4deg]",
+    image: card7,
+    className: "absolute top-8 left-[30%] rotate-[4deg] cursor-pointer",
+  },
+  {
+    title: "New",
+    image: card8,
+    className: "absolute top-8 left-[30%] rotate-[-4deg] cursor-pointer",
   },
 ];
