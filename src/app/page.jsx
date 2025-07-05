@@ -1,6 +1,14 @@
 "use client";
 
-import { ArrowRight, Mail, SendHorizonal } from "lucide-react";
+import {
+  ArrowRight,
+  Instagram,
+  Linkedin,
+  Mail,
+  MessageSquareText,
+  SendHorizonal,
+  Twitter,
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
@@ -183,27 +191,132 @@ export default function Home() {
       {/* Works Section */}
       <div className="relative px-4 md:px-20 min-h-screen bg-gradient-to-b from-foreground to-secondary overflow-hidden">
         <div>
-          <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
-            <span className="absolute text-background uppercase top-1/2 mx-auto max-w-full -translate-y-3/4 text-center text-5xl font-bold md:text-7xl">
-              We’re not just a{" "}
-              <h2 className="text-secondary"> marketing agency.</h2>
-              We’re the force behind your{" "}
-              <h2 className="text-primary inline"> brand’s success.</h2>
-            </span>
-            {items.map((item) => (
-              <DraggableCard key={item.title} className={item.className}>
-                <Image
-                  width={320}
-                  height={320}
-                  src={item.image}
-                  alt={item.title}
-                  className="pointer-events-none relative z-10 md:h-full md:w-80 h-[28rem] w-80 object-cover"
-                />
-              </DraggableCard>
-            ))}
-          </DraggableCardContainer>
+          <FadeIn>
+            <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
+              <span className="absolute text-background uppercase top-1/2 mx-auto max-w-full -translate-y-3/4 text-center text-5xl font-bold md:text-7xl">
+                We’re not just a{" "}
+                <h2 className="text-secondary"> marketing agency.</h2>
+                We’re the force behind your{" "}
+                <h2 className="text-primary inline"> brand’s success.</h2>
+              </span>
+              {items.map((item) => (
+                <DraggableCard
+                  key={item.title}
+                  className={`${item.className} bg-gradient-to-b from-foreground to-secondary shadow-2xl`}
+                >
+                  <Image
+                    width={320}
+                    height={320}
+                    src={item.image}
+                    alt={item.title}
+                    className="pointer-events-none relative z-10 h-[28rem] w-80 object-cover"
+                  />
+                </DraggableCard>
+              ))}
+            </DraggableCardContainer>
+          </FadeIn>
         </div>
       </div>
+      {/* Works Section Ends */}
+      {/* Footer Section */}
+      <div className="relative px-4 md:px-20 md:py-32 py-8 max-h-[80vh] bg-gradient-to-b from-20% from-secondary to-80% to-background overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 className="md:text-6xl text-4xl  font-bold uppercase">
+              Your Brand's{" "}
+              <span className="text-primary block">strategic partner</span>
+            </h2>
+            <p className="mt-8 text-2xl font-semibold">
+              Connect us{" "}
+              <Link href={""} className="underline block">
+                connect@aceproductions.in
+              </Link>
+            </p>
+            <div className="mt-8">
+              <h4 className="text-primary text-2xl uppercase font-semibold">
+                Kolkata
+              </h4>
+              <p className="md:text-xl text-base uppercase font-semibold">
+                B/38A/H/3/1 Market Street
+              </p>
+              <p className="md:text-xl text-base uppercase font-semibold">
+                Kolkata: 700087
+              </p>
+              <p className="md:text-xl text-base uppercase font-semibold">
+                New Market Area
+              </p>
+              <p className="md:text-xl text-base uppercase font-semibold">
+                West Bengal
+              </p>
+            </div>
+          </div>
+          <div>
+            <div className="">
+              <ul className="grid grid-cols-2 gap-14">
+                <li>
+                  <Link
+                    href={""}
+                    className="text-3xl font-semibold text-foreground hover:text-primary duration-300"
+                  >
+                    Our Story
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={""}
+                    className="text-3xl font-semibold text-foreground hover:text-primary duration-300"
+                  >
+                    Expertise
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={""}
+                    className="text-3xl font-semibold text-foreground hover:text-primary duration-300"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={""}
+                    className="text-3xl font-semibold text-foreground hover:text-primary duration-300"
+                  >
+                    Contact us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="flex gap-10 mt-20">
+              <Link href={""}>
+                <Instagram
+                  size={40}
+                  className="hover:text-primary duration-300"
+                />
+              </Link>
+              <Link href={""}>
+                <Twitter
+                  size={40}
+                  className="hover:text-primary duration-300"
+                />
+              </Link>
+              <Link href={""}>
+                <Linkedin
+                  size={40}
+                  className="hover:text-primary duration-300"
+                />
+              </Link>
+              <Link href={""}>
+                <MessageSquareText
+                  size={40}
+                  className="hover:text-primary duration-300"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Footer Section Ends */}
     </>
   );
 }
